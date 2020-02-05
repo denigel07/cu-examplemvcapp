@@ -33,3 +33,6 @@ D:\1920\CIA\ExampleMvcApp\obj\Debug\netcoreapp3.1\ExampleMvcApp.Views.pdb
 D:\1920\CIA\ExampleMvcApp\obj\Debug\netcoreapp3.1\ExampleMvcApp.dll
 D:\1920\CIA\ExampleMvcApp\obj\Debug\netcoreapp3.1\ExampleMvcApp.pdb
 D:\1920\CIA\ExampleMvcApp\obj\Debug\netcoreapp3.1\ExampleMvcApp.csproj.CopyComplete
+d:\1920\CIA\ExampleMvcApp\bin\Debug\netcoreapp3.1\MailKit.dll
+d:\1920\CIA\ExampleMvcApp\bin\Debug\netcoreapp3.1\MimeKit.dll
+d:\1920\CIA\ExampleMvcApp\bin\Debug\netcoreapp3.1\BouncyCastle.Crypto.dll

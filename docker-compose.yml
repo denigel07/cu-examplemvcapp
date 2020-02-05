@@ -2,7 +2,12 @@ version: "3.7"
 services:
 
   mvcapp:
-    image: examplemvc
+    image: examplemvc:mail
     ports:
       - "8080:80"
     build: .
+  mail: 
+    image: mailhog/mailhog
+    ports:
+      - "8025:8025" #webinterface for mail
+      - "1025:1025" #smtp deze poort openzetten als mvc app vanuit lokaal OS start (niet in container)

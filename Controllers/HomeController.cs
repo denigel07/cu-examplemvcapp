@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using ExampleMvcApp.Models;
+using MimeKit;
+using MailKit.Net.Smtp;
+using MailKit.Security;
 
 namespace ExampleMvcApp.Controllers
 {
@@ -18,9 +21,26 @@ namespace ExampleMvcApp.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> IndexAsync()
         {
+            const string MAIL_HOST = "mail"; // "localhost" als mvc app uitgevoerd vanaf lokaal OS (niet in container)
+
+            const int MAIL_PORT = 1025;
+
+            var message = new MimeMessage();
+            message.From.Add(new MailboxAddress("Mvc", "mvc@howestgp.be"));
+            message.To.Add(new MailboxAddress("","test@fake.com"));
+            message.Subject = "Examplemvc is alive.";
+            message.Body = new TextPart("plain"){
+                Text = "Hi there, testing examplemvc docker-email!"
+            };
+            using(var mailClient = new SmtpClient()){
+                await mailClient.ConnectAsync(MAIL_HOST, MAIL_PORT, SecureSocketOptions.None);
+                await mailClient.SendAsync(message);
+                await mailClient.DisconnectAsync(true);
+            }
             return View();
+
         }
 
         public IActionResult Privacy()
