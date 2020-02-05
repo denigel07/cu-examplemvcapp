@@ -1,4 +1,4 @@
-# ExampleWebApp
+# ExampleMVcApp
 
 ## Summary
 * **Course**: Continuous Integration Advanced
@@ -6,9 +6,9 @@
 * **Example #**: 2
 
 ## Branches
-* **01multistage**: 
-* **02dockercompose**:
-* **03multiplecontainers** or **master**:
+* **01multistage**: example use of multistage Dockerfile
+* **02dockercompose**: example use of docker-compose.yml
+* **03multiplecontainers** or **master**: spin up ASP.Net Core App and MailHog container
 
 
 ## Use
